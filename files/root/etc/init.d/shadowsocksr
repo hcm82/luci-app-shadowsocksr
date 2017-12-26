@@ -239,7 +239,7 @@ watchdog(){
 
 	LOGTIME=$(date "+%Y-%m-%d %H:%M:%S")
 	TRPORT=$(uci_get_by_type transparent_proxy local_port 1234)
-	GOOGLE=$(ping -4 accounts.gstatic.com -c 1 -w 5 2>/dev/null | sed '1{s/[^(]*(//;s/).*//;q}')
+	GOOGLE=$(ping -4 accounts.gstatic.com -c 1 -w 1 2>/dev/null | sed '1{s/[^(]*(//;s/).*//;q}')
 	DNSPOD=119.29.29.29 #DNSPOD HTTPDNS (Inside GFW)
 
 	if [ "Z$GOOGLE" = "Z" ]; then
